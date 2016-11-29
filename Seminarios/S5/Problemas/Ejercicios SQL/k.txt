@@ -1,0 +1,1 @@
+select distinct codpj from ventas natural join (select codpie from ventas spj where spj.codpro='S1')

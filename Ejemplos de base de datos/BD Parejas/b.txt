@@ -1,0 +1,15 @@
+select distinct nomM from (
+select * from matrim
+minus
+select * from hsimm
+)
+
+
+{ MA.nomM | matrim(MA) and not (exists HS)(hsimm(HS) and HS.nomM=MA.nomM and HS.nomH=MA.nomH) };
+
+select ma.nomm from matrim ma where not exists(
+select * from hsimm hs where hs.nomm=ma.nomm and hs.nomh=ma.nomh)
+
+
+Solucion = Maria
+	   Lola

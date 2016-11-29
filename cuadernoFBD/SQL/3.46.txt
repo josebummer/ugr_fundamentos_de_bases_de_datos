@@ -1,0 +1,7 @@
+select eq1,sum(partidos) from
+(select eq1,count(*) as partidos from encuentros e where res1>res2
+group by eq1
+union all
+select eq2,count(*) as partidos from encuentros e where res1<res2
+group by eq2)
+group by eq1

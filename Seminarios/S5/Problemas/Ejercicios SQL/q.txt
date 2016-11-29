@@ -1,0 +1,5 @@
+select codpro from proveedor s where not exists(
+select codpie,codpj from pieza,proyecto
+minus
+select codpie,codpj from ventas v where s.codpro=v.codpro
+)

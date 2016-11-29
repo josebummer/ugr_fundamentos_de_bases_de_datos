@@ -1,0 +1,12 @@
+select nomh from hombres
+minus
+select nomh from(msimh)
+
+
+{ H.nomh | hombres(H) and not (exists MS)(msimh(MS) and ms.nomh=h.nomh) };
+
+select h.nomh from hombres h where not exists(
+select * from msimh ms where ms.nomh=h.nomh)
+
+
+Solucion = Juan

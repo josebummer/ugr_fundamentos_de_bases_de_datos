@@ -1,0 +1,2 @@
+select eq1,round(sum(res1)/count(*),2) as puntos from encuentros
+group by eq1

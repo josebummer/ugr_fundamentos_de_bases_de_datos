@@ -1,0 +1,3 @@
+select codpj from proyecto
+minus
+select codpj from (select codpro from proveedor where ciudad='Londres') natural join ventas natural join (select * from pieza where color='Rojo') 

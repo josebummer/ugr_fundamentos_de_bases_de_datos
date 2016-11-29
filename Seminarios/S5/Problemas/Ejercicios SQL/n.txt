@@ -1,0 +1,3 @@
+select codpj from ventas
+minus
+select codpj from ventas where codpro!='S1'

@@ -1,0 +1,5 @@
+select codpie from pieza p
+where not exists(
+select codpj from proyecto j where ciudad='Paris'
+minus
+select codpj from ventas v where v.codpie=p.codpie)

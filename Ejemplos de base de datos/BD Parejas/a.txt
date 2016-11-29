@@ -1,0 +1,21 @@
+select nomh,nomm from hsimm natural join msimh natural join (
+select * from
+(select nomh from hombres where edad between 20 and 30),
+(select nomm from mujeres where edad between 20 and 30)
+)
+minus
+select * from matrim
+
+
+{ H.nomH,M.nomM | hombres(H) and mujeres(M) and H.edad > 20 and H.edad < 30 and M.edad > 20 and M.edad > 30 and
+(exists HS,MS)(hsimm(HS) and msimh(MS) and HS.nomH=H.nomH and HS.nomM=M.nomM and MS.nomH=H.nomH and MS.nomM=M.nomM and
+not (exists MA)(matrim(MA) and MA.nomH=H.nomH and MA.nomM=M.nomM)) };
+
+select h.nomh,m.nomm from hombres h,mujeres m where h.edad between 20 and 30 and m.edad between 20 and 30 and exists(
+select * from hsimm hs where HS.nomH=H.nomH and HS.nomM=M.nomM and exists(
+select * from msimh ms where MS.nomH=H.nomH and MS.nomM=M.nomM and not exists(
+select * from matrim ma where MA.nomH=H.nomH and MA.nomM=M.nomM)))
+
+
+
+Solucion = Roberto - Victoria

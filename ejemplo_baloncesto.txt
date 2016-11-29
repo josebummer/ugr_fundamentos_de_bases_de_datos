@@ -1,0 +1,5 @@
+Muestra los equipos que han ganado todos los partidos de casa
+
+select distinct eq.eq1 from encuentros eq where mpt exists(
+select * from encuentros e where e.eq1=eq.eq1 and e.res1<e.res2
+)

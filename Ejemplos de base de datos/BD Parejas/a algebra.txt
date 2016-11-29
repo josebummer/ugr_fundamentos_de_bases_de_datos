@@ -1,0 +1,11 @@
+select nomh,nomm from hsimm natural join msimh natural join (
+select * from
+(select nomh from hombres where edad between 20 and 30),
+(select nomm from mujeres where edad between 20 and 30)
+)
+minus
+select * from matrim
+
+
+
+Solucion = Roberto - Victoria

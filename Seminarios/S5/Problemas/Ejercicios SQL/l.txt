@@ -1,0 +1,3 @@
+select cantidad from ventas
+minus
+select ventas.cantidad from ventas,ventas spj where ventas.cantidad>spj.cantidad

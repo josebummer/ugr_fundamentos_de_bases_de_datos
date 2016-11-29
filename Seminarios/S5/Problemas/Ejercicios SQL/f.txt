@@ -1,0 +1,1 @@
+select distinct codpie from proveedor natural join proyecto natural join ventas

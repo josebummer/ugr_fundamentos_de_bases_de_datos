@@ -1,0 +1,17 @@
+select nomM from matrim
+minus
+select nomM from (
+select nomM,nomH from (
+select nomM from matrim),(select nomh from matrim))
+natural join hsimm
+
+
+{ MA.nomM | matrim(MA) and not (exists HS)(hsimm(HS) and HS.nomm=ma.nomm and (exists MA2)(matrim(MA2) and ma2.nomh=hs.nomh)) };
+
+select ma.nomm from matrim ma where not exists(
+select * from hsimm hs where hs.nomm=ma.nomm and exists(
+select * from matrim m2 where m2.nomh=hs.nomh))
+
+
+
+Solucion = Lola

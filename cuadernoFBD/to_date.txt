@@ -1,0 +1,2 @@
+select TO_CHAR(TO_DATE('03/03/1995','dd/mm/yyyy'),'"naciste un "day dd" de "month" de "YYYY"') from dual;
+select TO_CHAR(sysdate,'hh24:mi:ss') from dual;

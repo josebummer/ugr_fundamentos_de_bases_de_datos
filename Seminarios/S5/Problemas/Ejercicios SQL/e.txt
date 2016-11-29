@@ -1,0 +1,1 @@
+select distinct s.ciudad,j.ciudad from ventas spj natural join proyecto j inner join proveedor s on (s.codpro=spj.codpro)

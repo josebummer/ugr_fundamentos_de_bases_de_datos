@@ -1,0 +1,5 @@
+select spj.codpro from ventas spj where not exists(
+select codpj from proyecto
+minus
+select v.codpj from ventas v where v.codpro=spj.codpro and v.codpie=spj.codpie
+)

@@ -1,0 +1,1 @@
+select * from ventas where cantidad>100
